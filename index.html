@@ -1,33 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <style>
-h1 {
-      color: green;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Gorjeta Moderna</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, World!</h1>
-  <button onclick="alert('Button clicked!')">Click me</button>
-  <script>
-    let age = 25;
-    console.log(age);
-  age = 30;
-console.log(age);
-    const maxScore = 100;
-    console.log(maxScore); 
-  
-    let developer = "Jessica";
-console.log(developer);
-developer = "Quincy";
-console.log(developer);
 
-let firstName = "John";
-let lastName = "Doe";
+    <div class="container">
+        <h1>Calculadora de Gorjeta 💸</h1>
+        
+        <div class="input-group">
+            <label for="bill">Valor Total da Conta (R$)</label>
+            <input type="number" id="bill" placeholder="Ex: 50.00">
+            <p id="error-message" class="error-message"></p>
+        </div>
 
-let fullName = firstName + " " + lastName; 
-console.log(fullName); // John Doe
-  </script>
+        <div class="input-group">
+            <label>Qualidade do Serviço</label>
+            <select id="service-quality">
+                <option disabled selected value="0">-- Selecione a Opção --</option>
+                <option value="0.30">Excelente (30%)</option>
+                <option value="0.20">Bom (20%)</option>
+                <option value="0.15">Aceitável (15%)</option>
+                <option value="0.10">Ruim (10%)</option>
+                <option value="0.05">Péssimo (5%)</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="people">Número de Pessoas Dividindo</label>
+            <input type="number" id="people" placeholder="Ex: 1" min="1" value="1">
+        </div>
+
+        <button id="calculate-btn">CALCULAR GORJETA</button>
+
+        <div class="result-container" id="result-container">
+            <p class="result-title">Resultados</p>
+            <div class="result-row">
+                <span>Gorjeta Total:</span>
+                <span id="tip-amount" class="result-value">R$ 0.00</span>
+            </div>
+            <div class="result-row">
+                <span>Total por Pessoa:</span>
+                <span id="total-per-person" class="result-value">R$ 0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>Desenvolvido por [Seu Nome]</footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
